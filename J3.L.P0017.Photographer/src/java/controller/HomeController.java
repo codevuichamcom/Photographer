@@ -24,15 +24,15 @@ import javax.servlet.http.HttpServletResponse;
  * HomeController.<br>
  * 
  * <pre>
- Class lấy dữ liệu từ database Thông qua class GalleryDao và ContactDao để đẩy dữ liệu lên view và hiển thị lên trình duyệt
- Trong class này sẽ tiến hành các xử lí dưới đây.
- 
- . ProcessRequest.
- . DoGet.
- . DoPost.
-  
-  
- </pre>
+ * Class lấy dữ liệu từ database Thông qua class GalleryDao và ContactDao để đẩy dữ liệu lên view và hiển thị lên trình duyệt
+ * Trong class này sẽ tiến hành các xử lí dưới đây.
+ *
+ * . ProcessRequest.
+ * . DoGet.
+ * . DoPost.
+ * 
+ * 
+ * </pre>
  * 
  * @author FU QuanLHHE130736
  * @version 1.0

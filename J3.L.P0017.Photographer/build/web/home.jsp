@@ -16,6 +16,14 @@
               href="./My_Font/8596505.design.v26374.css">
 
         <script type="text/javascript" src="./My_Font/frontendApp.min.js"></script>
+        <script>
+            function submitForm(id){
+                var galleryForm = document.getElementById('galleryForm');
+                var galleryId =document.getElementById('galleryId');
+                galleryId.value=id;
+                galleryForm.submit();
+            }
+        </script>
     </head>
     <body data-pid="410915065" data-iid="">
 
@@ -49,11 +57,15 @@
                                                href="#">My front
                                                 page</a>
                                         </li>
-                                        <c:forEach items="${listGallery}" var="gallery">
-                                            <li class="  " style="">
-                                                <a rel="nofollow" href="./gallery?id=${gallery.id}">${gallery.name}</a>
-                                            </li>
-                                        </c:forEach>
+                                        <form id="galleryForm" action="gallery" method="POST">
+                                            <input type="hidden" id="galleryId" name="id"/>
+                                         </form>
+                                            <c:forEach items="${listGallery}" var="gallery">
+                                                <li class="  " style="">
+                                                    <a rel="nofollow" onclick="submitForm(${gallery.id})">${gallery.name}</a>
+                                                </li>
+                                            </c:forEach>
+                                        
                                         <li class="  " style="">
                                             <a rel="nofollow"
                                                href="contact">Contact</a>
@@ -108,23 +120,23 @@
                                         <div class="content">
                                             <ul class="thumbnails column-article-section">
                                                 <c:forEach items="${listGallery}" var="gallery">
-                                                <li class="span4">
-                                                    <div class="img-simple span12 ">
-                                                        <div class="image">
-                                                            <a rel="nofollow" data-ss="imagemodal"
-                                                               data-href="./My_Font/${gallery.image}"><img
-                                                                    src="./My_Font/${gallery.image}"></a>
+                                                    <li class="span4">
+                                                        <div class="img-simple span12 ">
+                                                            <div class="image">
+                                                                <a rel="nofollow" data-ss="imagemodal"
+                                                                   data-href="./My_Font/${gallery.image}"><img
+                                                                        src="./My_Font/${gallery.image}"></a>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <h4>
-                                                        <a rel="nofollow"
-                                                           href="gallery?id=${gallery.id}">View
-                                                            ${gallery.name}</a>
-                                                    </h4>
+                                                        <h4>
+                                                            <a rel="nofollow"
+                                                               href="gallery?id=${gallery.id}">View
+                                                                ${gallery.name}</a>
+                                                        </h4>
 
-                                                    <p>${gallery.content}</p>
-                                                </li>
+                                                        <p>${gallery.content}</p>
+                                                    </li>
                                                 </c:forEach>
                                             </ul>
                                         </div>
@@ -195,6 +207,5 @@
                 </div>
             </div> <!-- this is the Footer content -->
         </div>
-
     </body>
 </html>

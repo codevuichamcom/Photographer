@@ -22,7 +22,14 @@
             }
         </style>
         <script type="text/javascript" src="./My_Font/frontendApp.min.js"></script>
-
+        <script>
+            function submitForm(id){
+                var galleryForm = document.getElementById('galleryForm');
+                var galleryId =document.getElementById('galleryId');
+                galleryId.value=id;
+                galleryForm.submit();
+            }
+        </script>
 
     </head>
     <body data-pid="410915299" data-iid="">
@@ -57,11 +64,14 @@
                                                href="./home">My front
                                                 page</a>
                                         </li>
-                                        <c:forEach items="${listGallery}" var="g">
-                                            <li class=" <c:if test="${g.id==gallery.id}">active</c:if> " style="">
-                                                <a rel="nofollow" href="./gallery?id=${g.id}">${g.name}</a>
-                                            </li>
-                                        </c:forEach>
+                                        <form id="galleryForm" action="gallery" method="POST">
+                                            <input type="hidden" id="galleryId" name="id"/>
+                                         </form>
+                                            <c:forEach items="${listGallery}" var="g">
+                                                <li class="<c:if test="${g.id eq gallery.id}">active</c:if> " style="">
+                                                    <a rel="nofollow" onclick="submitForm(${g.id})">${g.name}</a>
+                                                </li>
+                                            </c:forEach>
                                         <li class="  " style="">
                                             <a rel="nofollow"
                                                href="contact">Contact</a>

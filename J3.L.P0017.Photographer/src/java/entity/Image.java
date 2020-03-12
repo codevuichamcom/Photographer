@@ -13,7 +13,7 @@ package entity;
  * <pre>
  *Class mô tả đối tượng Image
  *Trong class này sẽ tiến hành các xử lí dưới đây
- 
+ *
  * . GetId.
  * . SetId.
  * . GetGalleryId.
@@ -23,7 +23,7 @@ package entity;
  * . GetTitle.
  * . SetTitle.
  * . ToString.
- 
+ *
  </pre>
  * 
  * @author FU QuanLHHE130736
